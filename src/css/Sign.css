@@ -10,3 +10,9 @@
 .signContainer input {
     width: 500px;
 }
+
+.inputContainer {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 50px;
+}

@@ -7,6 +7,8 @@ import SignIn from "./component/SignIn";
 import SignUp from "./component/SignUp";
 
 function App() {
+  //react-router-dom의 BrowserRouter를 활용하여 현재 주소값에 따라,
+  //상황에 맞는 component를 렌더링하도록 하는 코드이다.
   return (
     <div className="App">
       <Router>
