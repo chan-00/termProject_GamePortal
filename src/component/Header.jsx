@@ -9,6 +9,8 @@ import "../css/Header.css";
 //recoil import
 import { useRecoilState } from "recoil";
 import {userID, isLoggedin} from "../Atoms/atomUserID";
+//Functions import
+import functionLogout from "../Functions/functionLogout";
 
 //페이지의 Header 영역에 보여질 html 요소들을 반환하는 component이다.
 function Header() {
@@ -23,12 +25,7 @@ function Header() {
 
     //로그아웃 테스트를 위해 임시로 로그아웃 이벤트 함수를 넣었다.
     const handleLogout = () => {
-        setLoginID("");
-        setLoginStatus(false);
-        window.sessionStorage.clear();
-
-        alert("로그아웃 되었습니다!");
-        navigate("/");
+        functionLogout(setLoginID, setLoginStatus, navigate);
     }
 
     //Game Portal 로고, 검색어 입력 영역,
