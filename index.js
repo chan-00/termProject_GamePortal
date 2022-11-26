@@ -54,6 +54,19 @@ app.post("/reduplicationID", (req, res) => {
     })
 })
 
+//로그인 페이지에서 login 이벤트 발생했을 때 로그인 처리를 위한 백엔드 코드
+//count(*)로 전달받은 id값이 현재 user 테이블에 있는 계정인지 검사하여 프론트로 데이터를 보낸다.
+app.post("/login", (req, res) => {
+    const id = req.body.id;
+    const pw = req.body.pw;
+
+    const sqlQuery = "select count(*) as 'cnt' from user where USER_ID = ? and PASSWORD = ?;";
+    db.query(sqlQuery, [id, pw], (err, result) => {
+        if(err) console.log(err.message);
+        res.send(result);
+    })
+})
+
 app.listen(PORT, () => {
     console.log(`running on port ${PORT}`);
 });
