@@ -1,0 +1,10 @@
+#headerContainer {
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+#searchTextBox {
+    width: 500px;
+}
