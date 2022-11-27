@@ -1,10 +1,64 @@
+/*헤더 전체 영역을 감싸고 있는 div 디자인*/
 #headerContainer {
-    display: flex;
-    justify-content: space-around;
     font-size: 18px;
-    margin-top: 15px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+/*헤더 전체 영역을 감싸고 있는 div 디자인*/
+
+
+/*검색창 디자인*/
+#searchTextBox {
+    width: 700px;
+    border-radius: 10px;
 }
 
-#searchTextBox {
-    width: 500px;
+#searchTextContainer {
+    font-size: 1em;
+    margin: auto;
 }
+
+#searchTextContainer button {
+    border: 0;
+    background-color: white;
+}
+/*검색창 디자인*/
+
+/*user account 버튼 디자인*/
+#accountBtn {
+    background-color: white;
+    border: 0;
+    position: absolute;
+    right: 2em;
+}
+
+#accountBtn * {
+    font-size: 1.7em;
+}
+
+#accountBtnContainer {
+    position: relative;
+}
+/*user account 버튼 디자인*/
+
+/*메인 로고 디자인*/
+#mainLogoContainer {
+    font-size: 1.3em;
+}
+
+#mainLogo {
+    margin-left: 3em;
+}
+/*메인 로고 디자인*/
+
+/*로그인/회원가입 디자인*/
+#userBtnContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#userBtnContainer:nth-last-child(1) {
+    margin-right: 2em;
+}
+/*로그인/회원가입 디자인*/

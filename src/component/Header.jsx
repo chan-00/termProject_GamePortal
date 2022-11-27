@@ -33,7 +33,9 @@ function Header() {
     //로그인과 회원가입 페이지로 연결되는 버튼을 렌더링하도록 하는 jsx 코드이다.
     return (
         <form id="headerContainer">
-            <Link to="/">Game Portal</Link>
+            <div id="mainLogoContainer">
+                <Link to="/" id="mainLogo">Game Portal</Link>
+            </div>
             <div id="searchTextContainer">
                 <input
                     type="text"
@@ -44,8 +46,9 @@ function Header() {
                 <button><Search /></button>
             </div>
             {window.sessionStorage.id
-            ? <div>
-                <button><PersonCircle /></button>
+            ? <div id="accountBtnContainer">
+                <button id="accountBtn"><PersonCircle /></button>
+                {/*<button onClick={handleLogout}>logout</button>*/}
                 <button onClick={handleLogout}>logout</button>
             </div>
             : <div id="userBtnContainer">
