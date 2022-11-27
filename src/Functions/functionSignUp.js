@@ -1,6 +1,8 @@
 import axios from "axios";
 
-function functionSignUp(idRef, pwRef, pwCheckRef, nameRef, emailRef, setUserID, setIsLoggedin, navigate) {
+function functionSignUp(idRef, pwRef, pwCheckRef, nameRef, emailRef, setUserID, setIsLoggedin, handleSignUpClose) {
+    
+
     //데이터베이스로 sql 쿼리 문으로 데이터를 넘길 때 밑의 3개 값이 포함되면 에러가 발생할 수 있기에 사전 차단하기 위한 조건문을 쓴다.
     if(idRef.current.value.includes("(") || idRef.current.value.includes(")") || idRef.current.value.includes(";")) {
         alert("id에 (, ), ; 값 중 하나 이상이 들어가 있습니다.");
@@ -41,7 +43,7 @@ function functionSignUp(idRef, pwRef, pwCheckRef, nameRef, emailRef, setUserID, 
                 setUserID(idRef.current.value);
                 setIsLoggedin(true);
                 window.sessionStorage.setItem("id", idRef.current.value);
-                navigate("/");
+                handleSignUpClose();
             }
             else {
                 //위의 조건이 아니라면 회원가입 실패 메시지를 띄운다.

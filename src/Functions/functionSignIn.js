@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function functionSignIn(idRef, pwRef, setUserID, setIsLoggedin, navigate) {
+function functionSignIn(idRef, pwRef, setUserID, setIsLoggedin, handleLoginClose) {
     if (idRef.current.value.includes("(") || idRef.current.value.includes(")") || idRef.current.value.includes(";")) {
         alert("id에 (, ), ; 값 중 하나 이상이 들어가 있습니다.!");
         idRef.current.focus();
@@ -22,7 +22,7 @@ function functionSignIn(idRef, pwRef, setUserID, setIsLoggedin, navigate) {
             window.sessionStorage.setItem("id", idRef.current.value);
             setUserID(idRef.current.value);
             setIsLoggedin(true);
-            navigate("/");
+            handleLoginClose();
         } 
         else {
             alert("로그인 실패!");
