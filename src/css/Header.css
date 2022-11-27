@@ -1,3 +1,9 @@
+/*account button list 영역까지 감싸는 헤더 영역*/
+#headerAllContainer {
+
+}
+/*account button list 영역까지 감싸는 헤더 영역*/
+
 /*헤더 전체 영역을 감싸고 있는 div 디자인*/
 #headerContainer {
     font-size: 18px;
@@ -26,19 +32,18 @@
 /*검색창 디자인*/
 
 /*user account 버튼 디자인*/
-#accountBtn {
-    background-color: white;
-    border: 0;
-    position: absolute;
-    right: 2em;
-}
-
-#accountBtn * {
-    font-size: 1.7em;
-}
-
 #accountBtnContainer {
     position: relative;
+}
+
+#accountBtn {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    right: 2em;
+    font-size: 1em;
 }
 /*user account 버튼 디자인*/
 
@@ -62,3 +67,13 @@
     margin-right: 2em;
 }
 /*로그인/회원가입 디자인*/
+
+/*account 버튼 클릭 시 표시되는 리스트 디자인*/
+#accountBtnClickList {
+    visibility: hidden;
+    float: right;
+    margin-right: 1.3em;
+    width: 7em;
+    margin-top: 1em;
+}
+/*account 버튼 클릭 시 표시되는 리스트 디자인*/
