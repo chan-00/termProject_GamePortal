@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//회원 수정 페이지에 들어가기 전 Modal 창에서 비밀번호 입력을 통해 회원 인증을 하도록 하는 비밀번호 인증 함수
 function functionAuth(loginID, authPwRef, navigate, handleUserAuthClose) {
     if (authPwRef.current.value.includes("(") || authPwRef.current.value.includes(")") || authPwRef.current.value.includes(";")) {
         alert("비밀번호에 (, ), ; 값 중 하나 이상이 들어가 있습니다.");

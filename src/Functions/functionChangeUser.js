@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//password, name, email 값을 전달받아 회원 정보를 수정하도록 express 서버 쪽에 요청을 보내는 함수
 function functionChangeUser(pwRef, nameRef, emailRef, navigate) {
     if (pwRef.current.value.includes("(") || pwRef.current.value.includes(")") || pwRef.current.value.includes(";")) {
         alert("비밀번호에 (, ), ; 값 중 하나 이상이 들어가 있습니다.");
