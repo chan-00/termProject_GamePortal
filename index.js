@@ -67,6 +67,18 @@ app.post("/login", (req, res) => {
     })
 })
 
+//회원정보 수정 버튼 클릭 시 발생하는 회원 인증 기능 구현을 위한 백엔드 코드
+app.post("/authpassword", (req, res) => {
+    const id = req.body.id;
+    const pw = req.body.pw;
+
+    const sqlQuery = "select count(*) as 'cnt' from user where USER_ID = ? and PASSWORD = ?;";
+    db.query(sqlQuery, [id, pw], (err, result) => {
+        if(err) console.log(err.message);
+        res.send(result);
+    })
+})
+
 app.listen(PORT, () => {
     console.log(`running on port ${PORT}`);
 });

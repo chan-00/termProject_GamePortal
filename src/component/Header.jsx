@@ -19,6 +19,7 @@ import functionLogout from "../Functions/functionLogout";
 import functionSignIn from '../Functions/functionSignIn';
 import functionSignUp from "../Functions/functionSignUp";
 import functionReduplicationID from "../Functions/functionReduplicationID";
+import functionAuth from "../Functions/functionAuth";
 
 //페이지의 Header 영역에 보여질 html 요소들을 반환하는 component이다.
 function Header() {
@@ -36,6 +37,8 @@ function Header() {
     const signupPwCheckRef = useRef();
     const signupNameRef = useRef();
     const signupEmailRef = useRef();
+    //회원 인증을 위한 useRef 값
+    const authPwRef = useRef();
 
     //현재 로그인된 값과 loginStatus로 로그인 여부를 검사한다.
     const [loginID, setLoginID] = useRecoilState(userID);
@@ -47,6 +50,7 @@ function Header() {
     //로그인과 회원가입 Modal 창을 띄우기 위한 useState 변수 선언
     const [loginShow, setLoginShow] = useState(false);
     const [signUpShow, setSignUpShow] = useState(false);
+    const [authShow, setAuthShow] = useState(false);
 
     //로그아웃 테스트를 위해 임시로 로그아웃 이벤트 함수를 넣었다.
     const handleLogout = () => {
@@ -59,6 +63,9 @@ function Header() {
     //회원가입 Modal 창을 켜고 끄는 이벤트 함수
     const handleSignUpShow = () => setSignUpShow(true);
     const handleSignUpClose = () => setSignUpShow(false);
+    //회원정보 수정 버튼 클릭 시 회원 인증 Modal 창을 켜고 끄는 이벤트 함수
+    const handleUserAuthShow = () => setAuthShow(true);
+    const handleUserAuthClose = () => setAuthShow(false);
 
     //로그인 이벤트 발생 시 백엔드와 통신하는 functionSignIn 함수 호출
     const handleSignInSubmit = (e) => {
@@ -72,6 +79,13 @@ function Header() {
         e.preventDefault();
         //로그인 기능 처리 함수 모듈화
         functionSignUp(signupIdRef, signupPwRef, signupPwCheckRef, signupNameRef, signupEmailRef, setUserID, setIsLoggedin, handleSignUpClose);
+    }
+
+    //회원 인증 버튼 클릭 시 호출되는 이벤트 함수
+    const handleAuthSubmit = (e) => {
+        e.preventDefault();
+        //백엔드와 통신하는 함수 호출
+        functionAuth(loginID, authPwRef, navigate, handleUserAuthClose);
     }
 
     //회원가입 시 중복확인 함수를 호출하는 이벤트 함수이다.
@@ -99,10 +113,11 @@ function Header() {
                     <button><Search /></button>
                 </div>
                 {window.sessionStorage.id
-                ? <div id="accountBtnContainer" >
-                    <DropdownButton title={window.sessionStorage.id} variant="outline-secondary" id="accountBtn">
-                        <Dropdown.Item href="#/action-1">My Page</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">찜한 게임</Dropdown.Item>
+                ? <div id="accountBtnContainer">
+                    <DropdownButton title={loginID} variant="outline-secondary" id="accountBtn">
+                        <Dropdown.Item onClick={handleUserAuthShow}>회원정보 수정</Dropdown.Item>
+                        <Dropdown.Item><Link to="/favoritegames">찜한 게임</Link></Dropdown.Item>
+                        <Dropdown.Item><Link to="/messagebox">쪽지함</Link></Dropdown.Item>
                         <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
                     </DropdownButton>
                 </div>
@@ -202,6 +217,27 @@ function Header() {
                         </FormGroup>
                         <Button variant="primary" type="submit">
                             Sign Up
+                        </Button>
+                    </Form>
+                </Modal.Body>
+            </Modal>
+            <Modal show={authShow} onHide={handleUserAuthClose} centered>
+                <Modal.Header className="px-4" closeButton>
+                    <Modal.Title className="ms-auto">회원 인증</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form onSubmit={handleAuthSubmit}>
+                        <FormGroup className="mb-3" controlId="userPW">
+                            <FormLabel>현재 비밀번호</FormLabel>
+                            <FormControl
+                                type="password"
+                                placeholder="비밀번호를 입력하세요"
+                                ref={authPwRef}
+                                required
+                            />
+                        </FormGroup>
+                        <Button variant="primary" type="submit">
+                            회원 인증
                         </Button>
                     </Form>
                 </Modal.Body>
