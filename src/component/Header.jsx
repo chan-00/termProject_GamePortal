@@ -234,6 +234,7 @@ function Header() {
                                 placeholder="비밀번호를 입력하세요"
                                 ref={authPwRef}
                                 required
+                                autoFocus
                             />
                         </FormGroup>
                         <Button variant="primary" type="submit">

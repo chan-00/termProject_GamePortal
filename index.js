@@ -104,6 +104,17 @@ app.post("/defaultaccount", (req, res) => {
     })
 })
 
+//회원 탈퇴 이벤트 발생 시 해당 유저를 테이블에서 삭제하도록 하는 백엔드 코드
+app.post("/deleteAccount", (req, res) => {
+    const id = req.body.id;
+
+    const sqlQuery = "delete from user where user_id = ?;";
+    db.query(sqlQuery, [id], (err, result) => {
+        if(err) console.log(err.message);
+        res.send(result);
+    })
+})
+
 app.listen(PORT, () => {
     console.log(`running on port ${PORT}`);
 });
