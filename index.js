@@ -79,6 +79,31 @@ app.post("/authpassword", (req, res) => {
     })
 })
 
+//회원정보 변경(update) 이벤트 발생 시 백엔드 코드
+app.post("/updateuser", (req, res) => {
+    const id = req.body.id;
+    const pw = req.body.pw;
+    const name = req.body.name;
+    const email = req.body.email;
+
+    const sqlQuery = "update user set password = ?, user_name = ?, email = ? where user_id = ?;";
+    db.query(sqlQuery, [pw, name, email, id], (err, result) => {
+        if(err) console.log(err.message);
+        res.send(result);
+    })
+})
+
+//회원 수정 페이지 접속 시 default 값을 얻기 위한 select문
+app.post("/defaultaccount", (req, res) => {
+    const id = req.body.id;
+
+    const sqlQuery = "select password, user_name, email from user where user_id = ?;";
+    db.query(sqlQuery, [id], (err, result) => {
+        if(err) console.log(err.message);
+        res.send(result);
+    })
+})
+
 app.listen(PORT, () => {
     console.log(`running on port ${PORT}`);
 });
