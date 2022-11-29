@@ -10,7 +10,7 @@
     margin: auto;
     margin-top: 3em;
     width: 90vw;
-    height: 60vh;
+    height: 45vh;
 }
 /* game rank를 보여주는 Carousel 영역을 감싸는 영역 디자인 */
 
@@ -24,7 +24,7 @@
 .rankCard {
     display: inline-block;
     width: 13em;
-    height: 13em;
+    height: 15em;
 }
 
 .rankCardImage {
@@ -36,6 +36,11 @@
 }
 
 .rankCardText {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.rankNum {
     font-size: 14px;
     font-weight: bold;
 }
