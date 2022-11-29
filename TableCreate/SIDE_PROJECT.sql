@@ -161,7 +161,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `SIDE_PROJECT`.`RANK`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `SIDE_PROJECT`.`RANK` (
+CREATE TABLE IF NOT EXISTS `SIDE_PROJECT`.`GAME_RANK_LIST` (
   `GAME_ENG_NAME` VARCHAR(50) NOT NULL,
   `GAME_RANK` INT(8) NOT NULL,
   `GAME_IMAGE` TEXT(512) NOT NULL,
