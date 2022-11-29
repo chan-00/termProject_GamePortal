@@ -95,29 +95,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `SIDE_PROJECT`.`PRICE_INFO`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `SIDE_PROJECT`.`PRICE_INFO` (
-  `CODE_CODE_ID` VARCHAR(50) NOT NULL,
-  `URL` TEXT(512) NOT NULL,
-  `STORE_PRICE` INT(32) NOT NULL,
-  `GAME_ENG_NAME` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`CODE_CODE_ID`, `GAME_ENG_NAME`),
-  INDEX `fk_PRICE_INFO_GAME1_idx` (`GAME_ENG_NAME` ASC) VISIBLE,
-  CONSTRAINT `fk_table2_CODE1`
-    FOREIGN KEY (`CODE_CODE_ID`)
-    REFERENCES `SIDE_PROJECT`.`CODE` (`CODE_ID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_PRICE_INFO_GAME1`
-    FOREIGN KEY (`GAME_ENG_NAME`)
-    REFERENCES `SIDE_PROJECT`.`GAME` (`ENG_NAME`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `SIDE_PROJECT`.`REVIEW`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `SIDE_PROJECT`.`REVIEW` (
