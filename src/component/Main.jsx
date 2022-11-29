@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 //bootstrap import
 import Carousel from 'react-bootstrap/Carousel';
+import Card from 'react-bootstrap/Card';
 //css import
 import "../css/Main.css";
 //recoil import
@@ -9,8 +10,6 @@ import { useRecoilState } from "recoil";
 import atomGameRankList from "../Atoms/atomGameRank";
 //Functions import
 import functionGetGameRank from "../Functions/functionGetGameRank";
-//component import
-import CarouselGameRank from "./CarouselGameRank";
 
 function Main() {
     //Main 페이지 첫 렌더링 시 인기게임 리스트 값을 받아와 화면에 뿌려주기 위한 recoil 세팅
@@ -20,20 +19,43 @@ function Main() {
     useEffect(() => {
         functionGetGameRank(setGameRankList);
     }, []);
-    console.log(gameRankList);
 
-    //가져온 인기 순위 데이터 길이에 따라 5순위마다 다른 Carousel.Item에 표현하게 한다.
+    //가져온 인기 순위 데이터를 5순위로 나눠 다른 Carousel.Item에 표현하게 한다.
     return (
         <div id="mainContainer">
-            <Carousel id="gameRankContainer">
+            <Carousel id="gameRankContainer" controls={false}>
                 <Carousel.Item>
-                    <div className="gameRankContainer">
-                        첫 번째 게임 리스트
+                    <div className="rankCardContainer">
+                        {gameRankList.map((rankObj, index) => {
+                            if(index >= 0 && index <= 4) {
+                                return (
+                                    <Card className="rankCard" key={index}>
+                                        <Card.Img className="rankCardImage" variant="top" src={rankObj.image} />
+                                        <Card.Body>
+                                            <Card.Title className="rankCardTitle">{rankObj.game_rank}</Card.Title>
+                                            <Card.Text className="rankCardText">{rankObj.title}</Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                )
+                            }
+                        })}
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <div className="gameRankContainer">
-                        두 번째 게임 리스트
+                    <div className="rankCardContainer">
+                        {gameRankList.map((rankObj, index) => {
+                            if(index >= 5 && index <= 9) {
+                                return (
+                                    <Card className="rankCard" key={index}>
+                                        <Card.Img className="rankCardImage" variant="top" src={rankObj.image} />
+                                        <Card.Body>
+                                            <Card.Title className="rankCardTitle">{rankObj.game_rank}</Card.Title>
+                                            <Card.Text className="rankCardText">{rankObj.title}</Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                )
+                            }
+                        })}
                     </div>
                 </Carousel.Item>
             </Carousel>

@@ -1,6 +1,5 @@
 /* Main 전체 영역을 감싸는 영역 디자인 */
 #mainContainer {
-    border: 1px solid black;
     min-height: 100vh;
 }
 /* Main 전체 영역을 감싸는 영역 디자인 */
@@ -11,8 +10,33 @@
     margin: auto;
     margin-top: 3em;
     width: 90vw;
-    height: 40vh;
+    height: 60vh;
 }
 /* game rank를 보여주는 Carousel 영역을 감싸는 영역 디자인 */
 
-/*  */
+/* main 페이지 card 디자인 */
+.rankCardContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5em;
+}
+
+.rankCard {
+    display: inline-block;
+    width: 13em;
+    height: 13em;
+}
+
+.rankCardImage {
+    height: 9em;
+}
+
+.rankCardTitle {
+    font-size: 13px;
+}
+
+.rankCardText {
+    font-size: 14px;
+    font-weight: bold;
+}
+/* main 페이지 card 디자인 */
