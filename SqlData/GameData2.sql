@@ -14,7 +14,7 @@ Infinity Ward가 최신 게임 플레이어와 더불어 완전히 새롭게 바
 또한, 콜 오브 듀티®: 워존 2.0으로 완전히 새로운 배틀 로얄을 만끽할 수 있습니다.
 ",
 " 1인칭 슈팅 액션 슈팅 멀티플레이어 싱글 플레이어 군사 1인칭 현대 전쟁 전술 현실적 폭력 풍부한 스토리 협동 분위기 있는 성인 온라인 협동 고어 3인칭 슈팅 3인칭",
-"2022-10-27","콜 오브 듀티: 모던 워페어 II","콜 오브 듀티: 모던 워페어 II | 워존 2.0",
+"2022-10-27","콜 오브 듀티: 모던 워페어 II","CALL OF DUTY: MODERN WARFARE II",
 " 64비트 프로세서와 운영 체제가 필요합니다 운영체제: Windows® 10 64 Bit (최신 업데이트) 프로세서: Intel® Core™ i3-6100 / Core™ i5-2500K 또는 AMD Ryzen™ 3 1200 메모리: 8 GB RAM 그래픽: NVIDIA® GeForce® GTX 960 또는 AMD Radeon™ RX 470 - DirectX 12.0 호환 시스템 DirectX: 버전 12 네트워크: 초고속 인터넷 연결 저장공간: 125 GB 사용 가능 공간",
 " 64비트 프로세서와 운영 체제가 필요합니다 운영체제: Windows® 10 64 Bit (최신 업데이트) 또는 Windows® 11 64 Bit (최신 업데이트) 프로세서: Intel® Core™ i5-6600K / Core™ i7-4770 또는 AMD Ryzen™ 5 1400 메모리: 12 GB RAM 그래픽: NVIDIA® GeForce® GTX 1060 또는 AMD Radeon™ RX 580 - DirectX 12.0 호환 시스템 DirectX: 버전 12 네트워크: 초고속 인터넷 연결 저장공간: 125 GB 사용 가능 공간",84500,4,5);
 
@@ -100,12 +100,12 @@ PC 최적화 그래픽
 insert into game(GMAE_INFO,CODE_TYPE,PUBLSH_DATE,KOR_NAME,ENG_NAME,MIN_SPEC,SEPC,DEFAULT_PRICE,DEVELOPER,PUBLISHER) values("
 
 게임에 대해
-역동하는 사냥 본능!사냥에 새로운 바람을 불러일으킬, 종횡무진으로 도약하는 액션. 마음 가는 대로 달릴 수 있는 필드. 미지의 흥분과 놀라움을 선사할 새로운 몬스터들.이제껏 없었던 사냥 체험이 「MONSTER HUNTER RISE」에서 헌터들을 기다린다!·새로운 바람을 불러일으키는 "밧줄벌레" 액션지시한 방향으로 날아가면서 특수한 "벌레철사"로 헌터를 끌어당기는 밧줄벌레는 사냥을 더욱 진화시키며, 무기마다 다른 특색이 있는 공격과 조합하면 새로운 헌팅 액션이 탄생한다! ·몬스터를 호쾌하게 조종하는 "용 조종"날뛰는 몬스터를 조종해 호쾌한 액션을 펼쳐보자!·사냥을 도와주는 동반자들친숙한 「동반자 아이루」와 함께 든든한 동료 「동반자 가루크」가 새롭게 등장!·카무라 마을의 이야기카무라 마을은 50년 만의 재앙 「백룡야행」이 가까이 다가와 궁지에 몰려있다.주인공은 헌터의 정점을 목표로 삼으면서 마을 동료들과 일치단결하여 이 재앙을 극복해야 한다.·수많은 몬스터가 대습격하는 「백룡야행」백룡야행이란 수많은 몬스터와 그들을 이끄는 거물로 구성된 【무리】의 대습격이다.필드 곳곳에 대형 몬스터가...·독자적인 생태를 가진 몬스터이번 작품을 상징하는 몬스터 마가이마가도를 비롯해 독자적인 생태를 가진 미지의 몬스터와 시리즈에 등장한 몬스터도 잇따라 등장!
+역동하는 사냥 본능!사냥에 새로운 바람을 불러일으킬, 종횡무진으로 도약하는 액션. 마음 가는 대로 달릴 수 있는 필드. 미지의 흥분과 놀라움을 선사할 새로운 몬스터들.이제껏 없었던 사냥 체험이 「MONSTER HUNTER RISE」에서 헌터들을 기다린다!·새로운 바람을 불러일으키는 『밧줄벌레』 액션지시한 방향으로 날아가면서 특수한 『벌레철사』로 헌터를 끌어당기는 밧줄벌레는 사냥을 더욱 진화시키며, 무기마다 다른 특색이 있는 공격과 조합하면 새로운 헌팅 액션이 탄생한다! ·몬스터를 호쾌하게 조종하는 『용 조종』날뛰는 몬스터를 조종해 호쾌한 액션을 펼쳐보자!·사냥을 도와주는 동반자들친숙한 「동반자 아이루」와 함께 든든한 동료 「동반자 가루크」가 새롭게 등장!·카무라 마을의 이야기카무라 마을은 50년 만의 재앙 「백룡야행」이 가까이 다가와 궁지에 몰려있다.주인공은 헌터의 정점을 목표로 삼으면서 마을 동료들과 일치단결하여 이 재앙을 극복해야 한다.·수많은 몬스터가 대습격하는 「백룡야행」백룡야행이란 수많은 몬스터와 그들을 이끄는 거물로 구성된 【무리】의 대습격이다.필드 곳곳에 대형 몬스터가...·독자적인 생태를 가진 몬스터이번 작품을 상징하는 몬스터 마가이마가도를 비롯해 독자적인 생태를 가진 미지의 몬스터와 시리즈에 등장한 몬스터도 잇따라 등장!
 ",
 " 액션 RPG 온라인 협동 사냥 멀티플레이어 액션 RPG 캐릭터 커스터마이즈 협동 JRPG 3인칭 싱글 플레이어 PvE 애니메이션 판타지 자연 3D 소울라이크 분위기 있는 용 닌자",
 "2022-1-12","몬헌 라이즈","MONSTER HUNTER RISE",
-" 64비트 프로세서와 운영 체제가 필요합니다 운영체제: Windows 10 （64-bit） 프로세서: Intel® Core™ i3-4130 or Core™ i5-3470 or AMD FX™-6100 메모리: 8 GB RAM 그래픽: NVIDIA® GeForce® GT 1030 (DDR4) or AMD Radeon™ RX 550 DirectX: 버전 12 네트워크: 초고속 인터넷 연결 저장공간: 36 GB 사용 가능 공간 추가 사항: 1080p/30fps when graphics settings are set to "Low". System requirements subject to change during game development.",
-" 64비트 프로세서와 운영 체제가 필요합니다 운영체제: Windows 10 （64-bit） 프로세서: Intel® Core™ i5-4460 or AMD FX™-8300 메모리: 8 GB RAM 그래픽: NVIDIA® GeForce® GTX 1060 (VRAM 3GB) or AMD Radeon™ RX 570 (VRAM 4GB) DirectX: 버전 12 네트워크: 초고속 인터넷 연결 저장공간: 36 GB 사용 가능 공간 추가 사항: 1080p/30fps when graphics settings are set to "Average". System requirements subject to change during game development.",59000,50,43);
+" 64비트 프로세서와 운영 체제가 필요합니다 운영체제: Windows 10 （64-bit） 프로세서: Intel® Core™ i3-4130 or Core™ i5-3470 or AMD FX™-6100 메모리: 8 GB RAM 그래픽: NVIDIA® GeForce® GT 1030 (DDR4) or AMD Radeon™ RX 550 DirectX: 버전 12 네트워크: 초고속 인터넷 연결 저장공간: 36 GB 사용 가능 공간 추가 사항: 1080p/30fps when graphics settings are set to 'Low'. System requirements subject to change during game development.",
+" 64비트 프로세서와 운영 체제가 필요합니다 운영체제: Windows 10 （64-bit） 프로세서: Intel® Core™ i5-4460 or AMD FX™-8300 메모리: 8 GB RAM 그래픽: NVIDIA® GeForce® GTX 1060 (VRAM 3GB) or AMD Radeon™ RX 570 (VRAM 4GB) DirectX: 버전 12 네트워크: 초고속 인터넷 연결 저장공간: 36 GB 사용 가능 공간 추가 사항: 1080p/30fps when graphics settings are set to 'Average'. System requirements subject to change during game development.",59000,50,43);
 
 
 insert into game(GMAE_INFO,CODE_TYPE,PUBLSH_DATE,KOR_NAME,ENG_NAME,MIN_SPEC,SEPC,DEFAULT_PRICE,DEVELOPER,PUBLISHER) values("
