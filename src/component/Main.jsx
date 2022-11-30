@@ -13,8 +13,8 @@ import { useRecoilState } from "recoil";
 import atomGameRankList from "../Atoms/atomGameRank";
 import atomGameNewsList from "../Atoms/atomGameNews";
 //Functions import
-import functionGetGameRank from "../Functions/functionGetGameRank";
-import functionGetGameNews from "../Functions/functionGetGameNews";
+import functionGetGameRank from "../Functions/FunctionsMainRender/functionGetGameRank";
+import functionGetGameNews from "../Functions/FunctionsMainRender/functionGetGameNews";
 
 function Main() {
     //Main 페이지 첫 렌더링 시 인기게임 리스트 값을 받아와 화면에 뿌려주기 위한 recoil 세팅
@@ -38,7 +38,7 @@ function Main() {
                         {gameRankList.map((rankObj, index) => {
                             if(index >= 0 && index <= 4) {
                                 return (
-                                    <Card className="rankCard" key={index}>
+                                    <Card className="rankCard" key={index} id={rankObj.title}>
                                         <Card.Img className="rankCardImage" variant="top" src={rankObj.image} />
                                         <Card.Body>
                                             <Card.Title className="rankCardTitle">
@@ -57,7 +57,7 @@ function Main() {
                         {gameRankList.map((rankObj, index) => {
                             if(index >= 5 && index <= 9) {
                                 return (
-                                    <Card className="rankCard" key={index}>
+                                    <Card className="rankCard" key={index} id={rankObj.title}>
                                         <Card.Img className="rankCardImage" variant="top" src={rankObj.image} />
                                         <Card.Body>
                                             <Card.Title className="rankCardTitle"><span className="rankNum">{rankObj.game_rank}</span>th</Card.Title>

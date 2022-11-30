@@ -15,11 +15,11 @@ import "../css/Header.css";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {userID, isLoggedin} from "../Atoms/atomUserID";
 //Functions import
-import functionLogout from "../Functions/functionLogout";
-import functionSignIn from '../Functions/functionSignIn';
-import functionSignUp from "../Functions/functionSignUp";
-import functionReduplicationID from "../Functions/functionReduplicationID";
-import functionAuth from "../Functions/functionAuth";
+import functionLogout from "../Functions/FunctionsSign/functionLogout";
+import functionSignIn from '../Functions/FunctionsSign/functionSignIn';
+import functionSignUp from "../Functions/FunctionsSign/functionSignUp";
+import functionReduplicationID from "../Functions/FunctionsSign/functionReduplicationID";
+import functionAuth from "../Functions/FunctionsUserCorrection/functionAuth";
 
 //페이지의 Header 영역에 보여질 html 요소들을 반환하는 component이다.
 function Header() {

@@ -10,8 +10,8 @@ import { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 //Functions import
-import functionChangeUser from "../Functions/functionChangeUser";
-import functionDefaultAccount from '../Functions/functionDefaultAccount';
+import functionChangeUser from "../Functions/FunctionsUserCorrection/functionChangeUser";
+import functionDefaultAccount from '../Functions/FunctionsUserCorrection/functionDefaultAccount';
 //recoil import
 import { useSetRecoilState } from "recoil";
 import { userID, isLoggedin } from "../Atoms/atomUserID";
