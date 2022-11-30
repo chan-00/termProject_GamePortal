@@ -125,7 +125,7 @@ app.get("/getRankList", (req, res) => {
 })
 
 //게임 뉴스 리스트를 DB로부터 가져오는 백엔드 코드
-app.get("/getNewList", (req, res) => {
+app.get("/getNewsList", (req, res) => {
     const sqlQuery = "select * from news order by news_time desc;";
     db.query(sqlQuery, (err, result) => {
         if(err) console.log(err.message);
@@ -133,6 +133,14 @@ app.get("/getNewList", (req, res) => {
     })
 })
 
+//DB에서 할인 일정에 대한 데이터를 가져오는 백엔드 코드
+app.get("/getSaleCalendar", (req, res) => {
+    const sqlQuery = "select sale_id, sale_title, date_format(sale_start, '%Y-%m-%d') as sale_start, date_format(sale_end, '%Y-%m-%d') as sale_end from sale_info;";
+    db.query(sqlQuery, (err, result) => {
+        if(err) console.log(err.message);
+        res.send(result);
+    })
+})
 
 app.listen(PORT, () => {
     console.log(`running on port ${PORT}`);

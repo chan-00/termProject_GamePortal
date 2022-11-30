@@ -113,3 +113,18 @@
     border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
 }
 /* 게임 뉴스 a태그 디자인 */
+
+
+/* calendar highlight 디자인 */
+.highlight1 {
+    background: #f3a95f;
+}
+
+.highlight2 {
+    background: #DAEAF1;
+}
+
+.highlight3 {
+    background: #FFFFD2;
+}
+/* calendar highlight 디자인 */
