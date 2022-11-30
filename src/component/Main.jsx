@@ -11,17 +11,22 @@ import "../css/Main.css";
 //recoil import
 import { useRecoilState } from "recoil";
 import atomGameRankList from "../Atoms/atomGameRank";
+import atomGameNewsList from "../Atoms/atomGameNews";
 //Functions import
 import functionGetGameRank from "../Functions/functionGetGameRank";
+import functionGetGameNews from "../Functions/functionGetGameNews";
 
 function Main() {
     //Main 페이지 첫 렌더링 시 인기게임 리스트 값을 받아와 화면에 뿌려주기 위한 recoil 세팅
     const [ gameRankList, setGameRankList ] = useRecoilState(atomGameRankList);
+    //위와 마찬가지로 첫 렌더링 시 게임 뉴스 값을 갖고 와서 화면에 뿌려주기 위한 recoil 세팅
+    const [ gameNewsList, setGameNewsList ] = useRecoilState(atomGameNewsList);
 
     //페이지 첫 렌더링 시 default로 표시해야 할 값들을 불러 오는 함수들을 호출한다.
     useEffect(() => {
         //게임 순위 리스트를 가져오는 함수를 호출하여 gameRankList 값에다 넣는 작업을 한다.
         functionGetGameRank(setGameRankList);
+        functionGetGameNews(setGameNewsList);
     }, []);
 
     //가져온 인기 순위 데이터를 5순위로 나눠 다른 Carousel.Item에 표현하게 한다.
@@ -73,16 +78,13 @@ function Main() {
 
                     </Calendar>
                     <ListGroup id="newsContainer">
-                        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                        <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-                        <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-                        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-                        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                        <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-                        <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-                        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                        {gameNewsList.map((newsObj) => {
+                            return (
+                                <ListGroup.Item action href={newsObj.news_url} target="_blank" key={newsObj.news_id} id={newsObj.news_id}>
+                                    {newsObj.headline}
+                                </ListGroup.Item>
+                            )
+                        })}
                     </ListGroup>
                 </div>
             </div>

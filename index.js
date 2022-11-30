@@ -117,12 +117,22 @@ app.post("/deleteAccount", (req, res) => {
 
 //게임 인기순위 리스트를 DB로부터 가져오는 백엔드 코드
 app.get("/getRankList", (req, res) => {
-    const sqlQuery = "select GAME_ENG_NAME as title, game_rank, GAME_IMAGE as image from game_rank_list order by game_rank asc;;";
+    const sqlQuery = "select GAME_ENG_NAME as title, game_rank, GAME_IMAGE as image from game_rank_list order by game_rank asc;";
     db.query(sqlQuery, (err, result) => {
         if(err) console.log(err.message);
         res.send(result);
     })
 })
+
+//게임 뉴스 리스트를 DB로부터 가져오는 백엔드 코드
+app.get("/getNewList", (req, res) => {
+    const sqlQuery = "select * from news order by news_time desc;";
+    db.query(sqlQuery, (err, result) => {
+        if(err) console.log(err.message);
+        res.send(result);
+    })
+})
+
 
 app.listen(PORT, () => {
     console.log(`running on port ${PORT}`);

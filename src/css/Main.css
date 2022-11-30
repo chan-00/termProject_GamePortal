@@ -51,7 +51,6 @@
 
 /* 뉴스/캘린더 컨테이너 디자인 */
 #newCalendarAllContainer {
-    border: 1px solid black;
     width: 100vw;
     height: 60vh;
 }
@@ -105,3 +104,12 @@
     overflow: auto;
 }
 /* 게임 뉴스 컨테이너 디자인 */
+
+
+/* 게임 뉴스 a태그 디자인 */
+.list-group-item.active {
+    background-color: white;
+    color: black;
+    border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+}
+/* 게임 뉴스 a태그 디자인 */
