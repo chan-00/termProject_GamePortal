@@ -29,7 +29,7 @@ insert into News(headline,news_url,news_time) values("
 넷마블, 2022  ESG 보고서 발간
 ","https://www.inven.co.kr/webzine/news/?news=279250","2022-11-28 17:54");
 insert into News(headline,news_url,news_time) values("
-유동수 의원 게임위 질타, 문체부장관 "전면 쇄신하겠다"
+유동수 의원 게임위 질타, 문체부장관 '전면 쇄신하겠다'
 ","https://www.inven.co.kr/webzine/news/?news=279246","2022-11-28 17:21");
 insert into News(headline,news_url,news_time) values("
 '눈물을 마시는 새'의 텍스트는 어떻게 이미지가 되었나?
@@ -65,13 +65,13 @@ insert into News(headline,news_url,news_time) values("
 '갓 오브 워 라그나로크', 첫 주에만 510만 장 팔렸다
 ","https://www.inven.co.kr/webzine/news/?news=279111","2022-11-24 08:02");
 insert into News(headline,news_url,news_time) values("
-이상헌 의원 "게이머한테 좋은 콘분위 기능 강화, 통과돼야"
+이상헌 의원 '게이머한테 좋은 콘분위 기능 강화, 통과돼야'
 ","https://www.inven.co.kr/webzine/news/?news=279089","2022-11-23 15:17");
 insert into News(headline,news_url,news_time) values("
 콜옵 모던 워페어2 및 워존 2.0에 축구 스타 번들 추가
 ","https://www.inven.co.kr/webzine/news/?news=279086","2022-11-23 14:47");
 insert into News(headline,news_url,news_time) values("
-GSOK "낮은 확률에 자율규제, 필요하다면 검토"
+GSOK '낮은 확률에 자율규제, 필요하다면 검토'
 ","https://www.inven.co.kr/webzine/news/?news=279081","2022-11-23 14:13");
 insert into News(headline,news_url,news_time) values("
 EA 신작 '와일드하츠', 가라쿠리 시스템 소개 영상 공개
