@@ -4,8 +4,9 @@ drop table sale_info;
 create table news(
 	news_id int not null auto_increment,
 	headline varchar(50) not null,
-    news_url varchar(256) not null,
-    primary key(news_id)
+    	news_url varchar(256) not null,
+	news_time DATETIME not null,
+    	primary key(news_id)
 )ENGINE = InnoDB;
 
 create table sale_info(
