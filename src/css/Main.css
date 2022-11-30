@@ -4,15 +4,17 @@
 }
 /* Main 전체 영역을 감싸는 영역 디자인 */
 
+
 /* game rank를 보여주는 Carousel 영역을 감싸는 영역 디자인 */
 #gameRankContainer {
     background-color: #DAEAF1;
-    margin: auto;
     margin-top: 3em;
     width: 90vw;
-    height: 45vh;
+    height: 380px;
+    margin-left: 5vw;
 }
 /* game rank를 보여주는 Carousel 영역을 감싸는 영역 디자인 */
+
 
 /* main 페이지 card 디자인 */
 .rankCardContainer {
@@ -45,3 +47,61 @@
     font-weight: bold;
 }
 /* main 페이지 card 디자인 */
+
+
+/* 뉴스/캘린더 컨테이너 디자인 */
+#newCalendarAllContainer {
+    border: 1px solid black;
+    width: 100vw;
+    height: 60vh;
+}
+
+#newsCalendarContainer {
+    display: flex;
+    justify-content: space-between;
+}
+/* 뉴스/캘린더 컨테이너 디자인 */
+
+
+/* 캘린더 제목 디자인 */
+#calendarTitle {
+    margin-left: 5vw;
+    margin-top: 2em;
+}
+/* 캘린더 제목 디자인 */
+
+
+/* 뉴스 제목 디자인 */
+#newsTitle {
+    float: left;
+    margin-top: -1.6em;
+    margin-left: 55vw;
+}
+/* 캘린더 제목 디자인 */
+
+
+/* 캘린더 디자인 */
+.react-calendar {
+    height: 380px;
+    width: 40vw;
+    margin-left: 5vw;
+}
+
+.react-calendar * {
+    margin-top: 10px;
+}
+
+.react-calendar__navigation__label > span {
+    font-size: 1.2em;
+}
+/* 캘린더 디자인 */
+
+
+/* 게임 뉴스 컨테이너 디자인 */
+#newsContainer {
+    width: 40vw;
+    height: 380px;
+    margin-right: 5vw;
+    overflow: auto;
+}
+/* 게임 뉴스 컨테이너 디자인 */
