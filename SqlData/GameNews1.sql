@@ -79,3 +79,9 @@ EA 신작 '와일드하츠', 가라쿠리 시스템 소개 영상 공개
 insert into News(headline,news_url,news_time) values("
 [풍경기] '지스타 2022 시디즈 브랜드존', 성황리에 종료
 ","https://www.inven.co.kr/webzine/news/?news=279014","2022-11-23 13:20");
+
+-- 테스트 데이터 검색
+select * from news;
+
+-- 테스트 데이터 삭제
+delete from news;

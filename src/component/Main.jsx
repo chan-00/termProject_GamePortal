@@ -61,6 +61,7 @@ function Main() {
                     </div>
                 </Carousel.Item>
             </Carousel>
+            
         </div>
     )
 }
