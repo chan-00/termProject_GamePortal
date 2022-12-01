@@ -1,10 +1,11 @@
 //react hook import
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Calendar from 'react-calendar';
 //bootstrap import
 import Carousel from 'react-bootstrap/Carousel';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Modal from 'react-bootstrap/Modal';
 //css import
 import 'react-calendar/dist/Calendar.css';
 import "../css/Main.css";
@@ -29,12 +30,23 @@ function Main() {
     //게임 할인 일정 리스트 값을 recoil 상태 관리로 값 관리
     const [ saleCalendar, setSaleCalendar ] = useRecoilState(atomGameSaleCalendar);
 
+    //캘린더에서 클릭한 날짜의 할인 일정 Modal 창을 띄우기 위한 useState 변수 선언
+    const [curSaleShow, setCurSaleShow] = useState(false);
+    //캘린더에서 특정 날짜 클릭 시 해당 날짜의 할인 일정 값을 담을 useState 변수 선언
+    const [ curSaleObj, setCurSaleObj ] = useState({});
+
+    //할인 일정 Modal 창을 켜고 끄는 이벤트 함수
+    const handleCalendarModalShow = () => setCurSaleShow(true);
+    const handleCalendarModalClose = () => setCurSaleShow(false);
+
     //react calendar highlight 설정을 위한 boolean 변수
     //이 변수값이 true일 때 해당 tile에 highlight 클래스 값을 준다.
     let tileHighlight = false;
     //calendar에서 일정별로 색깔을 구분하기 위한 숫자 값
     //숫자 값은 매번 1, 2, 3 순으로 숫자가 바뀌어 클래스값 highlight 뒤에 붙어 색을 구분하게 한다.
     let divCalendarNum = 1;
+    //사용자가 현재 클릭한 날짜 값을 저장할 변수
+    let currentClickDay;
 
     //페이지 첫 렌더링 시 default로 표시해야 할 값들을 불러 오는 함수들을 호출한다.
     useEffect(() => {
@@ -45,6 +57,18 @@ function Main() {
         //게임 세일 일정 리스트를 가져오는 함수 호출
         functionGetSaleCalendar(setSaleCalendar);
     }, []);
+
+    //사용자가 특정 날짜를 클릭했을 때 해당 날짜에 할인 일정이 있다면 Modal창을 띄우기 위한 이벤트 함수
+    const handleCalendarClick = (e) => {
+        currentClickDay = moment(e).format("YYYY-MM-DD");
+        saleCalendar.find((saleObj) => {
+            if(currentClickDay === saleObj.sale_start || currentClickDay === saleObj.sale_end ||
+                (moment(currentClickDay).isAfter(saleObj.sale_start) && moment(currentClickDay).isBefore(saleObj.sale_end))) {
+                    setCurSaleObj(saleObj);
+                    handleCalendarModalShow();
+            }
+        })
+    }
 
     //가져온 인기 순위 데이터를 5순위로 나눠 다른 Carousel.Item에 표현하게 한다.
     return (
@@ -117,7 +141,7 @@ function Main() {
                             return "highlight" + divCalendarNum;
                         }
                     }}
-                    onViewChange={({ action, activeStartDate, value, view }) => alert('New view is: ', view)} />
+                    onClickDay={handleCalendarClick} />
                     <ListGroup id="newsContainer">
                         {gameNewsList.map((newsObj) => {
                             return (
@@ -129,6 +153,14 @@ function Main() {
                     </ListGroup>
                 </div>
             </div>
+            <Modal show={curSaleShow} onHide={handleCalendarModalClose} centered>
+                <Modal.Header className="px-4" closeButton>
+                    <Modal.Title className="ms-auto">{curSaleObj.sale_title}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                        <span>{curSaleObj.sale_start} ~ {curSaleObj.sale_end}</span>
+                </Modal.Body>
+            </Modal>
         </div>
     )
 }

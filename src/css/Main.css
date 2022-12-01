@@ -125,6 +125,10 @@
 }
 
 .highlight3 {
-    background: #FFFFD2;
+    background: #E5B8F4;
+}
+
+.react-calendar__tile--now {
+    background: white;
 }
 /* calendar highlight 디자인 */

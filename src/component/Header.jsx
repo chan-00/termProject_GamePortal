@@ -50,6 +50,7 @@ function Header() {
     //로그인과 회원가입 Modal 창을 띄우기 위한 useState 변수 선언
     const [loginShow, setLoginShow] = useState(false);
     const [signUpShow, setSignUpShow] = useState(false);
+    //회원 인증 Modal 창을 띄우기 위한 useState 변수 선언
     const [authShow, setAuthShow] = useState(false);
 
     //로그아웃 테스트를 위해 임시로 로그아웃 이벤트 함수를 넣었다.
