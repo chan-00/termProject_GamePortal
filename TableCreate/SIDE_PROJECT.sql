@@ -62,12 +62,12 @@ CREATE TABLE IF NOT EXISTS `SIDE_PROJECT`.`GAME` (
   CONSTRAINT `fk_GAME_table12`
     FOREIGN KEY (`DEVELOPER`)
     REFERENCES `SIDE_PROJECT`.`CODE` (`CODE_ID`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_GAME_table13`
     FOREIGN KEY (`PUBLISHER`)
     REFERENCES `SIDE_PROJECT`.`CODE` (`CODE_ID`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
@@ -123,25 +123,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `SIDE_PROJECT`.`NEWS`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `SIDE_PROJECT`.`NEWS` (
-  `NEWS_ID` VARCHAR(50) NOT NULL,
-  `NEWS_NAME` VARCHAR(50) NOT NULL,
-  `NEWS_CONTENTS` TEXT(5000) NOT NULL,
-  `NEWS_DATE` DATE NOT NULL,
-  `GAME_ENG_NAME` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`NEWS_ID`, `GAME_ENG_NAME`),
-  INDEX `fk_NEWS_GAME1_idx` (`GAME_ENG_NAME` ASC) VISIBLE,
-  CONSTRAINT `fk_NEWS_GAME1`
-    FOREIGN KEY (`GAME_ENG_NAME`)
-    REFERENCES `SIDE_PROJECT`.`GAME` (`ENG_NAME`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `SIDE_PROJECT`.`GAME_RATE`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `SIDE_PROJECT`.`GAME_RATE` (
@@ -173,32 +154,6 @@ CREATE TABLE IF NOT EXISTS `SIDE_PROJECT`.`GAME_RANK_LIST` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `SIDE_PROJECT`.`SALE_INFO`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `SIDE_PROJECT`.`SALE_INFO` (
-  `SAEL_CODE` VARCHAR(50) NOT NULL,
-  `CODE_CODE_ID` VARCHAR(50) NOT NULL,
-  `SALE_PRICE` INT(32) NOT NULL,
-  `START_DATE` DATE NOT NULL,
-  `END_DATE` DATE NOT NULL,
-  `SALE_NAME` VARCHAR(50) NOT NULL,
-  `GAME_ENG_NAME` VARCHAR(50) NULL,
-  PRIMARY KEY (`SAEL_CODE`),
-  INDEX `fk_SALE_INFO_CODE1_idx` (`CODE_CODE_ID` ASC) VISIBLE,
-  INDEX `fk_SALE_INFO_GAME1_idx` (`GAME_ENG_NAME` ASC) VISIBLE,
-  CONSTRAINT `fk_SALE_INFO_CODE1`
-    FOREIGN KEY (`CODE_CODE_ID`)
-    REFERENCES `SIDE_PROJECT`.`CODE` (`CODE_ID`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_SALE_INFO_GAME1`
-    FOREIGN KEY (`GAME_ENG_NAME`)
-    REFERENCES `SIDE_PROJECT`.`GAME` (`ENG_NAME`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -280,6 +235,26 @@ CREATE TABLE IF NOT EXISTS `SIDE_PROJECT`.`MESSAGE` (
     ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+---------
+
+create table news(
+	news_id int not null auto_increment,
+	headline varchar(50) not null,
+    	news_url varchar(256) not null,
+	news_time DATETIME not null,
+    	primary key(news_id)
+)ENGINE = InnoDB;
+
+create table sale_info(
+	sale_id int not null auto_increment,
+    sale_title varchar(50) not null,
+    sale_start date,
+    sale_end date,
+    primary key(sale_id)
+)ENGINE = InnoDB;
+
+---------
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
