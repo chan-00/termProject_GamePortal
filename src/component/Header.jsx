@@ -14,17 +14,24 @@ import "../css/Header.css";
 //recoil import
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {userID, isLoggedin} from "../Atoms/atomUserID";
+import atomSearchPlain from "../Atoms/atomSearchPlain";
 //Functions import
 import functionLogout from "../Functions/FunctionsSign/functionLogout";
 import functionSignIn from '../Functions/FunctionsSign/functionSignIn';
 import functionSignUp from "../Functions/FunctionsSign/functionSignUp";
 import functionReduplicationID from "../Functions/FunctionsSign/functionReduplicationID";
 import functionAuth from "../Functions/FunctionsUserCorrection/functionAuth";
+//import api key
+import apikey from "../apikey";
+
 
 //페이지의 Header 영역에 보여질 html 요소들을 반환하는 component이다.
 function Header() {
     //navigate 사용을 위한 useNavigate 변수 선언
     const navigate = useNavigate();
+
+    //api 요청을 보낼 url 값이 들어갈 변수
+    let urlApi;
 
     //사용자가 입력한 게임 검색값을 알기 위한 useRef 연결 값을 선언했다.
     const searchRef = useRef();
@@ -43,6 +50,8 @@ function Header() {
     //현재 로그인된 값과 loginStatus로 로그인 여부를 검사한다.
     const [loginID, setLoginID] = useRecoilState(userID);
     const [loginStatus, setLoginStatus] = useRecoilState(isLoggedin);
+    //검색어 입력 시 isthereanydeal api에 요청한 후 결과값을 담을 recoil 상태 관리값
+    const [plains, setPlains] = useRecoilState(atomSearchPlain);
     //로그인 시 session 반영되면서 recoil 상태 관리에도 반영되도록 set 값을 선언했다.
     const setUserID = useSetRecoilState(userID);
     const setIsLoggedin = useSetRecoilState(isLoggedin);
@@ -95,12 +104,26 @@ function Header() {
         functionReduplicationID(signupIdRef);
     }
 
+    //검색어를 입력하고 엔터키 혹은 버튼을 눌렀을 때 호출되는 submit 이벤트 함수
+    //이 이벤트가 일어날 때 사용자가 입력한 검색어 값으로 api 요청을 fetch로 보내고, 결과를 받아 값을 recoil 변수값에 저장한 후,
+    //페이지 새로고침을 해도 검색 결과가 유지되게 하기 위해 session에도 데이터를 세팅한다.
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+
+        window.sessionStorage.setItem("userSearch", searchRef.current.value);
+        urlApi = `https://api.isthereanydeal.com/v02/search/search/?key=${apikey.myApiKey}&q=${window.sessionStorage.userSearch}&limit=30&strict=0`;
+        fetch(urlApi).then((response) => response.json()).then((data) => {
+            setPlains(data.data.results);
+            navigate("/detailsearch");
+        });
+    }
+
     //Game Portal 로고, 검색어 입력 영역,
     //로그인 되었다면 mypage 연결 버튼 렌더링과 로그인 되어 있지 않다면
     //로그인과 회원가입 페이지로 연결되는 버튼을 렌더링하도록 하는 jsx 코드이다.
     return (
         <div id="headerAllContainer">
-            <form id="headerContainer">
+            <form id="headerContainer" onSubmit={handleSearchSubmit}>
                 <div id="mainLogoContainer">
                     <Link to="/" id="mainLogo">Game Portal</Link>
                 </div>
@@ -111,7 +134,7 @@ function Header() {
                         placeholder="검색어를 입력하세요"
                         id="searchTextBox"
                     ></input>
-                    <button><Search /></button>
+                    <button type="submit"><Search /></button>
                 </div>
                 {window.sessionStorage.id
                 ? <div id="accountBtnContainer">

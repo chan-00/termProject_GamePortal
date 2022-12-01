@@ -2,10 +2,12 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 //user component import
 import Header from "./component/Header";
+//react component import
 import Main from "./component/Main";
 import ProfileUpdate from "./component/ProfileUpdate";
 import FavoriteGames from "./component/FavoriteGames";
 import MessageBox from "./component/MessageBox";
+import DetailSearch from "./component/DetailSearch";
 //css import
 import "./css/App.css";
 
@@ -21,6 +23,7 @@ function App() {
           <Route path="/profileupdate" element={<ProfileUpdate></ProfileUpdate>}></Route>
           <Route path="/favoritegames" element={<FavoriteGames></FavoriteGames>}></Route>
           <Route path="/messagebox" element={<MessageBox></MessageBox>}></Route>
+          <Route path="/detailsearch" element={<DetailSearch></DetailSearch>}></Route>
         </Routes>
       </Router>
     </div>
