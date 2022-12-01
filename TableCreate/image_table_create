@@ -1,0 +1,10 @@
+CREATE TABLE game_image (
+  `GAME_ENG_NAME` VARCHAR(50) NOT NULL,
+  image_url text(256) not null,
+  PRIMARY KEY (`GAME_ENG_NAME`),
+  CONSTRAINT `image_need_game_title`
+    FOREIGN KEY (`GAME_ENG_NAME`)
+    REFERENCES `SIDE_PROJECT`.`GAME` (`ENG_NAME`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
