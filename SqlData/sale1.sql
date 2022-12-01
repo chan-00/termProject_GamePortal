@@ -1,4 +1,4 @@
-delete from sale_info
+delete from sale_info;
 
 insert into sale_info(sale_title,sale_start,sale_end) values("프라이데이 세일","2022-11-22","2022-11-29");
 insert into sale_info(sale_title,sale_start,sale_end) values("스팀 겨울 세일","2022-12-22","2023-01-05");
