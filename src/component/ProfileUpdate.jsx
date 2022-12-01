@@ -81,7 +81,8 @@ function ProfileUpdate() {
                         className='formInput' 
                         type="password" 
                         placeholder="변경할 비밀번호를 입력하세요" 
-                        ref={pwRef} />
+                        ref={pwRef} 
+                        required/>
                 </FormGroup>
                 <FormGroup controlId="inputName">
                     <FormLabel className='formLabel'>Change Name</FormLabel>
@@ -90,7 +91,8 @@ function ProfileUpdate() {
                         type="text" 
                         placeholder="변경할 이름을 입력하세요" 
                         ref={nameRef}
-                        defaultValue={defaultUserValue.user_name ? defaultUserValue.user_name : null}/>
+                        defaultValue={defaultUserValue.user_name ? defaultUserValue.user_name : null}
+                        required />
                 </FormGroup>
                 <FormGroup controlId="inputEmail">
                     <FormLabel className='formLabel'>Change Email</FormLabel>
@@ -99,7 +101,8 @@ function ProfileUpdate() {
                         type="email" 
                         placeholder="변경할 이메일을 입력하세요" 
                         ref={emailRef}
-                        defaultValue={defaultUserValue.email ? defaultUserValue.email : null}/>
+                        defaultValue={defaultUserValue.email ? defaultUserValue.email : null}
+                        required />
                 </FormGroup>
                 <Button variant="outline-primary" type="submit">
                     정보 수정
