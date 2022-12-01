@@ -49,8 +49,8 @@ insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(48,"Pearl Abyss","개발사
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(49,"Pearl Abyss","유통사");
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(50,"The Indie Stone","개발사"); #프로잭트 좀보이드 개발사
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(51,"Evil empire","개발사");
-insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(52,"","");
-insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(53,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(52,"CD Projek","유통사"); #위쳐,사펑
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(53,"ATLUS","개발사"); #페르소나
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(54,"","");
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(55,"","");
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(56,"","");
