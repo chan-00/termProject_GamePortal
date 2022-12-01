@@ -56,7 +56,7 @@ insert into game(GMAE_INFO,CODE_TYPE,PUBLSH_DATE,KOR_NAME,ENG_NAME,MIN_SPEC,SEPC
 아틀러스가 선사하는 쥬브나일 RPG 시리즈의 최신작 『P5R』이 또다시 등장.주인공은 어떤 사정으로 '도쿄'의 고등학교로 전학하게 된 소년.낮에는 극히 평범한 고등학생, 방과 후에는 부패한 어른들의 왜곡된 욕망을 훔치는 괴도로 암약.개성 넘치는 동료들과 함께하는 '세상 바로잡기'의 행보는 과연…? 
 ",
 " JRPG 애니메이션 풍부한 스토리 RPG 턴제 전투 파티 기반 RPG 웅장한 사운드트랙 싱글 플레이어 턴제 전략 감정적인 복수 결말 다채로운 비주얼 노벨 연애 시뮬레이션 어드벤처 선정적인 내용 강도 사운드트랙 수사관 폭력",
-"2022-10-20","페르소나5 로얄","페르소나 5 더 로열",
+"2022-10-20","페르소나5 로얄","Persona 5 Royal",
 " 64비트 프로세서와 운영 체제가 필요합니다 운영체제: Windows 10 프로세서: Intel Core i7-4790, 3.4 GHz | AMD Ryzen 5 1500X, 3.5 GHz 메모리: 8 GB RAM 그래픽: Nvidia GeForce GTX 650 Ti, 2 GB | AMD Radeon R7 360, 2 GB DirectX: 버전 11 저장공간: 41 GB 사용 가능 공간 추가 사항: Low 720p @ 60 FPS. Requires a CPU which supports the AVX and SSE4.2 instruction set.",
 " 64비트 프로세서와 운영 체제가 필요합니다 운영체제: Windows 10 프로세서: Intel Core i7-4790, 3.4 GHz | AMD Ryzen 5 1500X 3.5 Ghz 메모리: 8 GB RAM 그래픽: Nvidia GeForce GTX 760, 2 GB | AMD Radeon HD 7870, 2 GB DirectX: 버전 11 저장공간: 41 GB 사용 가능 공간 추가 사항: High 1080p @ 60 FPS",69800,53,43);
 
