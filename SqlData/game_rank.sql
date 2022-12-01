@@ -1,3 +1,5 @@
+delete from game_rank_list;
+
 insert into game_rank_list(game_rank, GAME_ENG_NAME, GAME_IMAGE) values(1,"PUBG: BATTLEGROUNDS","https://cdn.cloudflare.steamstatic.com/steam/apps/578080/capsule_231x87.jpg?t=1667814365");
 insert into game_rank_list(game_rank, GAME_ENG_NAME, GAME_IMAGE) values(2,"Project Zomboid","https://cdn.cloudflare.steamstatic.com/steam/apps/108600/capsule_231x87.jpg?t=1667832656");
 insert into game_rank_list(game_rank, GAME_ENG_NAME, GAME_IMAGE) values(3,"Red Dead Redemption 2","https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_231x87.jpg?t=1656615305");
