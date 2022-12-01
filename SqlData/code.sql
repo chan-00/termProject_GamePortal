@@ -1,3 +1,5 @@
+delete from code;
+
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(1,"Steam","스토어");
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(2,"Ubisoft","유통사");
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(3,"Ubisoft Québec","개발사");
@@ -60,3 +62,5 @@ insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(59,"","");
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(60,"","");
 
 #insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(,"","");
+
+select * from code;
