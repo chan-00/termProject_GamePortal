@@ -51,7 +51,7 @@ insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(50,"The Indie Stone","개�
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(51,"Evil empire","개발사");
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(52,"CD Projek","유통사"); #위쳐,사펑
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(53,"ATLUS","개발사"); #페르소나
-insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(54,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(54,"Steam","유통사");
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(55,"","");
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(56,"","");
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(57,"","");
