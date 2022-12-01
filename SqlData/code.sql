@@ -54,12 +54,33 @@ insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(51,"Evil empire","개발사
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(52,"CD Projek","유통사"); #위쳐,사펑
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(53,"ATLUS","개발사"); #페르소나
 insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(54,"Steam","유통사");
-insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(55,"","");
-insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(56,"","");
-insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(57,"","");
-insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(58,"","");
-insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(59,"","");
-insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(60,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(55,"Tango Gameworks","개발사"); #고스트 와이어 개발사
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(56,"Rusty Lake","개발사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(57,"Rusty Lake","유통사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(58,"kouri","개발사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(59,"PLAYISM","유통사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(60,"Clever Plays","개발사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(61,"Clever Plays","유통사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(62,"Project Moon","개발사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(63,"Project Moon","유통사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(64,"Moon Studio","개발사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(65,"Xbox Game Studios","유통사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(66,"Behaviour Interactive","개발사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(67,"Behaviour Interactive","유통사");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(68,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(69,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(70,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(71,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(72,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(73,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(74,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(75,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(76,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(77,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(78,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(79,"","");
+insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(80,"","");
+
 
 #insert into code(CODE_ID,CODE_NAME,CODE_TYPE) values(,"","");
 
