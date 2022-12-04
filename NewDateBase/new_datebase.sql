@@ -114,7 +114,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`game_rank` (
   `game_Data_game_id` INT NOT NULL,
-  `rank` INT NOT NULL,
+  `rank_num` INT NOT NULL,
+  game_title varchar(256),
+  game_image varchar(256),
   PRIMARY KEY (`game_Data_game_id`),
   CONSTRAINT `fk_game_rank_game_Data1`
     FOREIGN KEY (`game_Data_game_id`)
@@ -132,7 +134,7 @@ create table news(
 )ENGINE = InnoDB;
 
 create table sale_info(
-	sale_id int not null auto_increment,
+    sale_id int not null auto_increment,
     sale_title varchar(50) not null,
     sale_start date,
     sale_end date,
