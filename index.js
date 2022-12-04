@@ -19,10 +19,10 @@ app.use(cors(corsOptions)); // 미들웨어 설정 작업
 //mysql db와 연결하는 작업
 const db = mysql.createPool({
   host: "localhost",
-  port: 3307,
+  port: 3306,
   user: "root",
   password: "1234",
-  database: "side_project",
+  database: "mydb",
   //한 번에 여러 쿼리문을 보낼 수 있게 해 주는 옵션
   //현재는 delete 쿼리문에서 여러 쿼리를 보내게 하기 위해 사용
   multipleStatements: true,
@@ -35,7 +35,7 @@ app.post("/signup", (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
 
-    const sqlQuery = "INSERT INTO user(USER_ID,PASSWORD,USER_NAME,EMAIL,REGIST_DATE)\
+    const sqlQuery = "INSERT INTO user_data(USER_ID,PASSWORD,USER_NAME,USER_EMAIL,RES_DATE)\
     VALUES (?, ?, ? ,? ,date_format(sysdate(),'%Y-%m-%d'));";
     db.query(sqlQuery, [id, pw, name, email], (err, result) => {
         if(err) console.log(err.message);
@@ -47,7 +47,7 @@ app.post("/signup", (req, res) => {
 app.post("/reduplicationID", (req, res) => {
     const id = req.body.id;
 
-    const sqlQuery = "select count(*) as cnt from user where user_id = ?;";
+    const sqlQuery = "select count(*) as cnt from user_data where user_id = ?;";
     db.query(sqlQuery, [id], (err, result) => {
         if(err) console.log(err.message);
         res.send(result);
@@ -60,7 +60,7 @@ app.post("/login", (req, res) => {
     const id = req.body.id;
     const pw = req.body.pw;
 
-    const sqlQuery = "select count(*) as 'cnt' from user where USER_ID = ? and PASSWORD = ?;";
+    const sqlQuery = "select count(*) as 'cnt' from user_data where USER_ID = ? and PASSWORD = ?;";
     db.query(sqlQuery, [id, pw], (err, result) => {
         if(err) console.log(err.message);
         res.send(result);
@@ -72,7 +72,7 @@ app.post("/authpassword", (req, res) => {
     const id = req.body.id;
     const pw = req.body.pw;
 
-    const sqlQuery = "select count(*) as 'cnt' from user where USER_ID = ? and PASSWORD = ?;";
+    const sqlQuery = "select count(*) as 'cnt' from user_data where USER_ID = ? and PASSWORD = ?;";
     db.query(sqlQuery, [id, pw], (err, result) => {
         if(err) console.log(err.message);
         res.send(result);
@@ -86,7 +86,7 @@ app.post("/updateuser", (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
 
-    const sqlQuery = "update user set password = ?, user_name = ?, email = ? where user_id = ?;";
+    const sqlQuery = "update user_data set password = ?, user_name = ?, user_email = ? where user_id = ?;";
     db.query(sqlQuery, [pw, name, email, id], (err, result) => {
         if(err) console.log(err.message);
         res.send(result);
@@ -97,7 +97,7 @@ app.post("/updateuser", (req, res) => {
 app.post("/defaultaccount", (req, res) => {
     const id = req.body.id;
 
-    const sqlQuery = "select password, user_name, email from user where user_id = ?;";
+    const sqlQuery = "select password, user_name, user_email from user_data where user_id = ?;";
     db.query(sqlQuery, [id], (err, result) => {
         if(err) console.log(err.message);
         res.send(result);
@@ -108,7 +108,7 @@ app.post("/defaultaccount", (req, res) => {
 app.post("/deleteAccount", (req, res) => {
     const id = req.body.id;
 
-    const sqlQuery = "delete from user where user_id = ?;";
+    const sqlQuery = "delete from user_data where user_id = ?;";
     db.query(sqlQuery, [id], (err, result) => {
         if(err) console.log(err.message);
         res.send(result);
@@ -117,7 +117,7 @@ app.post("/deleteAccount", (req, res) => {
 
 //게임 인기순위 리스트를 DB로부터 가져오는 백엔드 코드
 app.get("/getRankList", (req, res) => {
-    const sqlQuery = "select GAME_ENG_NAME as title, game_rank, GAME_IMAGE as image from game_rank_list order by game_rank asc;";
+    const sqlQuery = "select GAME_ENG_NAME as title, game_rank, GAME_IMAGE as image from game_rank order by game_rank asc;";
     db.query(sqlQuery, (err, result) => {
         if(err) console.log(err.message);
         res.send(result);
@@ -146,7 +146,7 @@ app.get("/getSaleCalendar", (req, res) => {
 app.post("/getSteamAppID", (req, res) => {
     const title = req.body.title;
 
-    const sqlQuery = "select a from b where c = ?";
+    const sqlQuery = "select game_id from game_data where game_title = ?";
     db.query(sqlQuery, [title], (err, result) => {
         if(err) console.log(err.message);
         res.send(result);
