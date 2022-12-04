@@ -8,7 +8,6 @@ import apikey from "../apikey";
 
 //테스트
 import axios from "axios";
-import {Steam} from 'steamwebapi-ts';
 
 
 //사용자가 게임을 검색했을 때 결과 화면을 보여 줄 component
@@ -19,12 +18,8 @@ function DetailSearch() {
     console.log("디테일 페이지");
     console.log(searchPlainResult);
 
-    const api = new Steam(apikey.mySteamApiKey);
-
     useEffect(() => {
-        api.getAppList().then(data => {
-            console.log(data);
-        })
+
     }, []);
 
     return (

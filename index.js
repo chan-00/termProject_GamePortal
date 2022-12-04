@@ -3,12 +3,6 @@ const mysql = require("mysql"); // 데이터베이스
 const bodyParser = require("body-parser"); // 요청정보 처리
 const cors = require("cors"); // 교차 출처 리소스 공유(Cross-Origin Resource Sharing, CORS)
 
-//테스트 > 스팀 api 사용
-const SteamApi = require("steamapi");
-const steam = new SteamApi("14DE9BF31E23A4673A1ED7058CB5C4BE");
-//테스트 > 스팀 api 사용
-
-
 const app = express(); // 익스프레스 설정
 const PORT = process.env.port || 8000; // 포트번호 설정 포트번호는 0부터 16비트
 
@@ -146,14 +140,6 @@ app.get("/getSaleCalendar", (req, res) => {
         if(err) console.log(err.message);
         res.send(result);
     })
-})
-
-//스팀 api 테스트
-app.get("/getSteamAllGame", (req, res) => {
-    steam.resolve("http://api.steampowered.com/ISteamApps/GetAppList/v2").then(response => {
-        console.log(response);
-    });
-      
 })
 
 app.listen(PORT, () => {
