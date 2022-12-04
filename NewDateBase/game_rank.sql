@@ -1,14 +1,14 @@
 -- delete from game_rank_list;
 
-insert into game_rank values(1,578080);
-insert into game_rank values(2,108600);
-insert into game_rank values(3,1174180);
-insert into game_rank values(4,1091500); 
-insert into game_rank values(5,1811260);
-insert into game_rank values(6,1938090);
-insert into game_rank values(7,960170);
-insert into game_rank values(8,1687950);
-insert into game_rank values(9,1817070);
-insert into game_rank values(10,289070);
+insert into game_rank values(578080,1);
+insert into game_rank values(108600,2);
+insert into game_rank values(1174180,3);
+insert into game_rank values(1091500,4); 
+insert into game_rank values(1811260,5);
+insert into game_rank values(1938090,6);
+insert into game_rank values(960170,7);
+insert into game_rank values(1687950,8);
+insert into game_rank values(1817070,9);
+insert into game_rank values(289070,10);
 
-select * from game_rank_list;
+select * from game_rank;
