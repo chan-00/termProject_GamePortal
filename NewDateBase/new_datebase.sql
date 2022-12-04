@@ -1,4 +1,6 @@
 -- MySQL Workbench Forward Engineering
+-- drop schema mydb;
+
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -20,9 +22,7 @@ USE `mydb` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`game_Data` (
   `game_id` INT NOT NULL,
   `game_title` VARCHAR(256) NOT NULL,
-  PRIMARY KEY (`game_id`),
-  UNIQUE INDEX `game_Datacol_UNIQUE` (`game_title` ASC) VISIBLE,
-  UNIQUE INDEX `idgame_Data_UNIQUE` (`game_id` ASC) VISIBLE)
+  PRIMARY KEY (`game_id`))
 ENGINE = InnoDB;
 
 
