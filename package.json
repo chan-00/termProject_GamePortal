@@ -12,6 +12,7 @@
     "moment": "^2.29.4",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.20",
+    "querystring-es3": "^0.2.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-bootstrap-icons": "^1.10.2",
@@ -20,6 +21,9 @@
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "recoil": "^0.7.6",
+    "steam-fetch-api": "^0.0.19",
+    "steamapi": "^2.2.0",
+    "steamwebapi-ts": "^1.7.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

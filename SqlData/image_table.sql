@@ -34,3 +34,5 @@ insert into game_image(GAME_ENG_NAME,image_url) values("The Past Within","https:
 insert into game_image(GAME_ENG_NAME,image_url) values("The Witcher 3: Wild Hunt","https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg?t=1668443314");
 insert into game_image(GAME_ENG_NAME,image_url) values("Tom Clancy's Rainbow Six Siege","https://cdn.akamai.steamstatic.com/steam/apps/359550/header.jpg?t=1669819895");
 insert into game_image(GAME_ENG_NAME,image_url) values("Warhammer 40,000: Darktide","https://cdn.akamai.steamstatic.com/steam/apps/1361210/header.jpg?t=1669841688");
+
+select * from game_image;
