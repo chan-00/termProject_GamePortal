@@ -269,3 +269,11 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 alter table user modify USER_CODE int not null auto_increment;
+
+create table steam_data(
+	steam_app_id int not null,
+	steam_game_title varchar(256) not null,
+	primary key(steam_app_id)
+);
+
+select * from steam_data;

@@ -142,6 +142,17 @@ app.get("/getSaleCalendar", (req, res) => {
     })
 })
 
+//DB에서 스팀의 app id 값을 가져오는 백엔드 코드
+app.post("/getSteamAppID", (req, res) => {
+    const title = req.body.title;
+
+    const sqlQuery = "select a from b where c = ?";
+    db.query(sqlQuery, [title], (err, result) => {
+        if(err) console.log(err.message);
+        res.send(result);
+    })
+})
+
 app.listen(PORT, () => {
     console.log(`running on port ${PORT}`);
 });
