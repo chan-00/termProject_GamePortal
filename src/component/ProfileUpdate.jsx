@@ -101,7 +101,7 @@ function ProfileUpdate() {
                         type="email" 
                         placeholder="변경할 이메일을 입력하세요" 
                         ref={emailRef}
-                        defaultValue={defaultUserValue.email ? defaultUserValue.email : null}
+                        defaultValue={defaultUserValue.user_email ? defaultUserValue.email : null}
                         required />
                 </FormGroup>
                 <Button variant="outline-primary" type="submit">

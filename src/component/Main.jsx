@@ -83,7 +83,7 @@ function Main() {
                                         <Card.Img className="rankCardImage" variant="top" src={rankObj.image} />
                                         <Card.Body>
                                             <Card.Title className="rankCardTitle">
-                                                <span className="rankNum">{rankObj.game_rank}</span>{(rankObj.game_rank === 1) ? "st" : ((rankObj.game_rank === 2) ? "nd" : ((rankObj.game_rank === 3) ? "rd" : "th"))}
+                                                <span className="rankNum">{rankObj.rank_num}</span>{(rankObj.rank_num === 1) ? "st" : ((rankObj.rank_num === 2) ? "nd" : ((rankObj.rank_num === 3) ? "rd" : "th"))}
                                             </Card.Title>
                                             <Card.Text className="rankCardText">{rankObj.title}</Card.Text>
                                         </Card.Body>
@@ -101,7 +101,7 @@ function Main() {
                                     <Card className="rankCard" key={index} id={rankObj.title}>
                                         <Card.Img className="rankCardImage" variant="top" src={rankObj.image} />
                                         <Card.Body>
-                                            <Card.Title className="rankCardTitle"><span className="rankNum">{rankObj.game_rank}</span>th</Card.Title>
+                                            <Card.Title className="rankCardTitle"><span className="rankNum">{rankObj.rank_num}</span>th</Card.Title>
                                             <Card.Text className="rankCardText">{rankObj.title}</Card.Text>
                                         </Card.Body>
                                     </Card>

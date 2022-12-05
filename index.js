@@ -3,6 +3,10 @@ const mysql = require("mysql"); // 데이터베이스
 const bodyParser = require("body-parser"); // 요청정보 처리
 const cors = require("cors"); // 교차 출처 리소스 공유(Cross-Origin Resource Sharing, CORS)
 
+//포트포워딩 테스트
+const path = require('path');
+//포트포워딩 테스트
+
 const app = express(); // 익스프레스 설정
 const PORT = process.env.port || 8000; // 포트번호 설정 포트번호는 0부터 16비트
 
@@ -19,7 +23,7 @@ app.use(cors(corsOptions)); // 미들웨어 설정 작업
 //mysql db와 연결하는 작업
 const db = mysql.createPool({
   host: "localhost",
-  port: 3306,
+  port: 3307,
   user: "root",
   password: "1234",
   database: "mydb",
@@ -35,7 +39,7 @@ app.post("/signup", (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
 
-    const sqlQuery = "INSERT INTO user_data(USER_ID,PASSWORD,USER_NAME,USER_EMAIL,RES_DATE)\
+    const sqlQuery = "INSERT INTO user_data(USER_ID,PASSWORD,USER_NAME,USER_EMAIL,RES_DATA)\
     VALUES (?, ?, ? ,? ,date_format(sysdate(),'%Y-%m-%d'));";
     db.query(sqlQuery, [id, pw, name, email], (err, result) => {
         if(err) console.log(err.message);
@@ -117,7 +121,7 @@ app.post("/deleteAccount", (req, res) => {
 
 //게임 인기순위 리스트를 DB로부터 가져오는 백엔드 코드
 app.get("/getRankList", (req, res) => {
-    const sqlQuery = "select GAME_ENG_NAME as title, game_rank, GAME_IMAGE as image from game_rank order by game_rank asc;";
+    const sqlQuery = "select game_title as title, rank_num, GAME_IMAGE as image from game_rank order by rank_num asc;";
     db.query(sqlQuery, (err, result) => {
         if(err) console.log(err.message);
         res.send(result);
@@ -156,3 +160,15 @@ app.post("/getSteamAppID", (req, res) => {
 app.listen(PORT, () => {
     console.log(`running on port ${PORT}`);
 });
+
+//포트포워딩을 위한 테스트 코드
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build/index.html'));
+})
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build/index.html'));
+});
+//포트포워딩을 위한 테스트 코드
