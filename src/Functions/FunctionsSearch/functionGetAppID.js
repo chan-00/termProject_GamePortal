@@ -1,27 +1,18 @@
 import axios from "axios";
 import server_ip from "../../serverIP.js";
 
-function functionGetAppID(plains, setSearchAppID) {
-    const tempArr = [];
-    const tempObj = { appid: "", title: "", plain: "" };
-
+function functionGetAppID(plains, setGameAppID) {
     plains.map((plainObj) => {
-        tempObj.title = plainObj.title;
-        tempObj.plain = plainObj.plain;
-
         axios.post("http://" + server_ip + ":8000/getSteamAppID", {
             title: plainObj.title
         }).then((res) => {
             const { data } = res;
-            tempObj.appid = data.appid;
-
-            tempArr.push(tempObj);
+            console.log({appid: data[0].game_id, title: plainObj.title, plain: plainObj.plain});
+            setGameAppID(prev => [...prev, {appid: data[0].game_id, title: plainObj.title, plain: plainObj.plain}]);
         }).catch((err) => {
-            console.log(err);
+            //console.log(err);
         })
     });
-
-    setSearchAppID(tempArr);
 }
 
 export default functionGetAppID;

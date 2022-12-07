@@ -15,6 +15,8 @@ import functionDefaultAccount from '../Functions/FunctionsUserCorrection/functio
 //recoil import
 import { useSetRecoilState } from "recoil";
 import { userID, isLoggedin } from "../Atoms/atomUserID";
+//server ip import
+import server_ip from "../serverIP.js";
 
 //회원 수정 페이지 component
 function ProfileUpdate() {
@@ -47,7 +49,7 @@ function ProfileUpdate() {
 
     //회원 탈퇴 클릭 시 axios 통신으로 현재 로그인 계정의 ID 값을 보내는 이벤트 함수이다.
     const handleAccountDelete = () => {
-        axios.post("http://localhost:8000/deleteAccount", {
+        axios.post("http://" + server_ip + ":8000/deleteAccount", {
             id: window.sessionStorage.id
         }).then((res) => {
             //axios 통신이 성공적으로 처리되면 해당 회원의 계정이 delete된 것이므로,

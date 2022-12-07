@@ -111,6 +111,7 @@ function Header() {
         e.preventDefault();
 
         window.sessionStorage.setItem("userSearch", searchRef.current.value);
+        window.sessionStorage.setItem("userSearchJudgment", Math.random());
         urlApi = `https://api.isthereanydeal.com/v02/search/search/?key=${apikey.myApiKey}&q=${window.sessionStorage.userSearch}&limit=30&strict=0`;
         fetch(urlApi).then((response) => response.json()).then((data) => {
             setPlains(data.data.results);
