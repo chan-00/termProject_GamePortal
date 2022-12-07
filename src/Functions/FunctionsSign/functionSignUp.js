@@ -1,4 +1,5 @@
 import axios from "axios";
+import server_ip from "../../serverIP.js";
 
 function functionSignUp(idRef, pwRef, pwCheckRef, nameRef, emailRef, setUserID, setIsLoggedin, handleSignUpClose) {
     //데이터베이스로 sql 쿼리 문으로 데이터를 넘길 때 밑의 3개 값이 포함되면 에러가 발생할 수 있기에 사전 차단하기 위한 조건문을 쓴다.
@@ -26,7 +27,7 @@ function functionSignUp(idRef, pwRef, pwCheckRef, nameRef, emailRef, setUserID, 
     //비밀번호와 비밀번호 체크 값이 같은지 확인하여 같으면 axios로 서버에 값을 보낸다.
     if(pwRef.current.value === pwCheckRef.current.value) {
         //axios post 방식으로 서버 url에 signup 요청을 보낸다.(입력한 값도 같이 보냄)
-        axios.post("http://localhost:8000/signup", {
+        axios.post("http://" + server_ip + ":8000/signup", {
             id: idRef.current.value,
             pw: pwRef.current.value,
             name: nameRef.current.value,

@@ -1,4 +1,5 @@
 import axios from "axios";
+import server_ip from "../../serverIP.js";
 
 function functionGetAppID(plains, setSearchAppID) {
     const tempArr = [];
@@ -8,7 +9,7 @@ function functionGetAppID(plains, setSearchAppID) {
         tempObj.title = plainObj.title;
         tempObj.plain = plainObj.plain;
 
-        axios.post("http://localhost:8000/getSteamAppID", {
+        axios.post("http://" + server_ip + ":8000/getSteamAppID", {
             title: plainObj.title
         }).then((res) => {
             const { data } = res;

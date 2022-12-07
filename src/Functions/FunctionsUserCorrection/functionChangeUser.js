@@ -1,4 +1,5 @@
 import axios from "axios";
+import server_ip from "../../serverIP.js";
 
 //password, name, email 값을 전달받아 회원 정보를 수정하도록 express 서버 쪽에 요청을 보내는 함수
 function functionChangeUser(pwRef, nameRef, emailRef, navigate) {
@@ -18,7 +19,7 @@ function functionChangeUser(pwRef, nameRef, emailRef, navigate) {
         return false;
     }
 
-    axios.post("http://localhost:8000/updateuser", {
+    axios.post("http://" + server_ip + ":8000/updateuser", {
         id: window.sessionStorage.id,
         pw: pwRef.current.value,
         name: nameRef.current.value,

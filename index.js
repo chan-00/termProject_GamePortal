@@ -162,6 +162,7 @@ app.listen(PORT, () => {
 });
 
 //포트포워딩을 위한 테스트 코드
+/*
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/', (req, res) => {
@@ -171,4 +172,5 @@ app.get('/', (req, res) => {
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build/index.html'));
 });
+*/
 //포트포워딩을 위한 테스트 코드

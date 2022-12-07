@@ -1,4 +1,5 @@
 import axios from "axios";
+import server_ip from "../../serverIP.js";
 
 //회원 수정 페이지에 들어가기 전 Modal 창에서 비밀번호 입력을 통해 회원 인증을 하도록 하는 비밀번호 인증 함수
 function functionAuth(loginID, authPwRef, navigate, handleUserAuthClose) {
@@ -8,7 +9,7 @@ function functionAuth(loginID, authPwRef, navigate, handleUserAuthClose) {
         return false;
     }
 
-    axios.post("http://localhost:8000/authpassword", {
+    axios.post("http://" + server_ip + ":8000/authpassword", {
         id: loginID,
         pw: authPwRef.current.value,
     }).then((res) => {

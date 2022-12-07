@@ -30,7 +30,8 @@ function DetailSearch() {
 
     //search api의 결과값이 담긴 plains 값이 바뀔 때만 DB와 새로 통신하여 searchAppID 값을 바꾸게 한다.
     useEffect(() => {
-        functionGetAppID(plains, setSearchAppID);
+        //functionGetAppID(plains, setSearchAppID);
+        console.log(plains);
     }, [plains]);
 
     return (

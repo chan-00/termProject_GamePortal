@@ -1,4 +1,5 @@
 import axios from "axios";
+import server_ip from "../../serverIP.js";
 
 function functionReduplicationID(idRef) {
     //회원가입 버튼과 마찬가지로 (, ), ; 3개 값이 들어가지 않게 조건문으로 걸러 준다.
@@ -9,7 +10,7 @@ function functionReduplicationID(idRef) {
     }
 
     //axios로 id 값을 백엔드에 보내서 DB에 입력한 id 값이 1개 이상 존재하는지 확인
-    axios.post("http://localhost:8000/reduplicationID", {
+    axios.post("http://" + server_ip + ":8000/reduplicationID", {
         id: idRef.current.value
     }).then((res) => {
         //반환된 컬럼 cnt는 현재 user 테이블에 입력한 아이디 값이 존재하는지 count한 결과값으로,

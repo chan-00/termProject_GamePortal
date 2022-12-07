@@ -1,8 +1,9 @@
 import axios from "axios";
+import server_ip from "../../serverIP.js";
 
 //Main 페이지에서 인기 게임 순위 리스트 데이터를 가져와서 recoil 상태 관리 데이터에 넣어 주는 기능의 함수이다.
 function functionGetGameRank(setGameRankList) {
-    axios.get("http://localhost:8000/getRankList", {}).then((res) => {
+    axios.get("http://" + server_ip + ":8000/getRankList", {}).then((res) => {
         const { data } = res;
         setGameRankList(data);
     }).catch((err) => {
