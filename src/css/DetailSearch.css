@@ -1,0 +1,31 @@
+/* 검색 결과 리스트 전체를 감싸는 컨테이너 */
+#searchResultListAllContainer {
+    width: 50vw;
+    margin:100px auto;
+}
+/* 검색 결과 리스트 전체를 감싸는 컨테이너 */
+
+
+/* 게임 하나의 컨테이너 디자인 */
+.searchListItemContainer {
+    display: grid;
+    grid-template-areas:
+        "image title"
+        "image shopList";
+}
+/* 게임 하나의 컨테이너 디자인 */
+
+
+/* grid 디자인을 위한 게임 각 요소의 디자인 */
+.gameImage {
+    grid-area: image;
+}
+
+.gameTitle {
+    grid-area: title;
+}
+
+.gameShopList {
+    grid-area: shopList;
+}
+/* grid 디자인을 위한 게임 각 요소의 디자인 */

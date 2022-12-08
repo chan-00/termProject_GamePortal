@@ -109,14 +109,18 @@ function Header() {
     //페이지 새로고침을 해도 검색 결과가 유지되게 하기 위해 session에도 데이터를 세팅한다.
     const handleSearchSubmit = (e) => {
         e.preventDefault();
-
-        window.sessionStorage.setItem("userSearch", searchRef.current.value);
-        window.sessionStorage.setItem("userSearchJudgment", Math.random());
-        urlApi = `https://api.isthereanydeal.com/v02/search/search/?key=${apikey.myApiKey}&q=${window.sessionStorage.userSearch}&limit=30&strict=0`;
-        fetch(urlApi).then((response) => response.json()).then((data) => {
-            setPlains(data.data.results);
-            navigate("/detailsearch");
-        });
+        if(searchRef.current.value.length >= 2) {
+            window.sessionStorage.setItem("userSearch", searchRef.current.value);
+            window.sessionStorage.setItem("userSearchJudgment", Math.random());
+            urlApi = `https://api.isthereanydeal.com/v02/search/search/?key=${apikey.myApiKey}&q=${window.sessionStorage.userSearch}&limit=15&strict=0`;
+            fetch(urlApi).then((response) => response.json()).then((data) => {
+                setPlains(data.data.results);
+                navigate("/detailsearch");
+            });
+        }
+        else {
+            alert("검색어를 2글자 이상 입력해 주세요!");
+        }
     }
 
     //Game Portal 로고, 검색어 입력 영역,
